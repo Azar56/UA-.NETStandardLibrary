@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
     "Portable.BouncyCastle": "1.8.1.2",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "System.Xml.XmlDocument": "4.0.1"
+    "System.Xml.XmlDocument": "4.3.0"
   },
   "frameworks": {
     "uap10.0": {}

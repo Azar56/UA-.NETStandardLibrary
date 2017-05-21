@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "System.Xml.XmlDocument": "4.0.1",
-    "WinRTXamlToolkit.UWP": "2.0.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
+    "System.Xml.XmlDocument": "4.3.0",
+    "WinRTXamlToolkit.UWP": "2.3.0"
   },
   "frameworks": {
     "uap10.0": {}

@@ -3,29 +3,29 @@
 
   "dependencies": {
     "Portable.BouncyCastle": "1.8.1.2",
-    "NETStandard.Library": "1.6.0",
-    "Newtonsoft.Json": "9.0.1",
-    "System.Data.Common": "4.1.0",
-    "System.Private.ServiceModel": "4.1.0",
+    "NETStandard.Library": "1.6.1",
+    "Newtonsoft.Json": "10.0.2",
+    "System.Data.Common": "4.3.0",
+    "System.Private.ServiceModel": "4.3.0",
     "System.ServiceModel.Primitives": "4.1.0"
   },
 
   "frameworks": {
     "net46": {
       "dependencies": {
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-        "Microsoft.AspNetCore.Server.Kestrel.Https": "1.0.0"
+        "Microsoft.AspNetCore.Server.Kestrel": "1.1.2",
+        "Microsoft.AspNetCore.Server.Kestrel.Https": "1.1.2"
       }
     },
     "netstandard1.3": {
       "dependencies": {
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-        "Microsoft.AspNetCore.Server.Kestrel.Https": "1.0.0"
+        "Microsoft.AspNetCore.Server.Kestrel": "1.1.2",
+        "Microsoft.AspNetCore.Server.Kestrel.Https": "1.1.2"
       }
     },
     "uap10.0": {
       "dependencies": {
-        "System.Net.NameResolution": "4.0.0"
+        "System.Net.NameResolution": "4.3.0"
       },
       "buildOptions": {
         "define": [ "NO_HTTPS" ]
