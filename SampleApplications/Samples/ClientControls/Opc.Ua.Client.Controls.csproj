@@ -166,6 +166,9 @@
     <Compile Include="Endpoints\EndpointSelectorCtrl.xaml.cs">
       <DependentUpon>EndpointSelectorCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Endpoints\HostDlg.xaml.cs">
+      <DependentUpon>HostDlg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Endpoints\HostListCtrl.xaml.cs">
       <DependentUpon>HostListCtrl.xaml</DependentUpon>
     </Compile>
@@ -244,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Endpoints\EndpointSelectorCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Endpoints\HostDlg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,10 +2,12 @@
 using Opc.Ua.Configuration;
 using Opc.Ua.Sample;
 using System;
+using System.Reflection;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Storage;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 
@@ -33,6 +35,13 @@ namespace Opc.Ua.SampleClient
         /// <param name="e">Details about the launch request and process.</param>
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
+            var version = typeof(App).GetTypeInfo().Assembly.GetName().Version;
+            string verString = string.Format("{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+
+            ApplicationView appView = ApplicationView.GetForCurrentView();
+
+            appView.Title = verString;
+
             ApplicationInstance.MessageDlg = new ApplicationMessageDlg();
             ApplicationInstance application = new ApplicationInstance();
             application.ApplicationName = "UA Sample Client";
@@ -97,6 +106,17 @@ namespace Opc.Ua.SampleClient
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             deferral.Complete();
+        }
+
+        public static bool IsMobile
+        {
+            get
+            {
+                bool ret = false;
+                var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
+                ret = (qualifiers.ContainsKey("DeviceFamily") && qualifiers["DeviceFamily"] == "Mobile");
+                return ret;
+            }
         }
     }
 }

@@ -10,6 +10,5 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="HostsCB" HorizontalAlignment="Left" Margin="126,205,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="ConnectBTN" Content="Connect" HorizontalAlignment="Left" Margin="135,285,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </UserControl>

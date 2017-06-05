@@ -120,26 +120,26 @@ namespace Opc.Ua.Sample.Controls
             {
                 UserTokenType tokenType = (UserTokenType)UserIdentityTypeCB.SelectedItem;
 
-                UserNameCB.Items.Clear();
+                // UserNameCB.Items.Clear();
                 
-                UserNameCB.IsEnabled = true;
+                UserNameTB.IsEnabled = true;
                 PasswordTB.IsEnabled = true;
 
                 // allow use to browse certificate stores.
                 if (tokenType == UserTokenType.Certificate)
                 {
-                    UserNameCB.Items.Add(m_BrowseCertificates);
-                    UserNameCB.SelectedIndex = 0;
+                    // UserNameCB.Items.Add(m_BrowseCertificates);
+                    // UserNameCB.SelectedIndex = 0;
                 }
 
                 // populate list.
-                foreach (IUserIdentity identity in m_session.IdentityHistory)
-                {
-                    if (identity.TokenType == tokenType)
-                    {
-                        UserNameCB.Items.Add(identity.DisplayName);
-                    }
-                }
+                // foreach (IUserIdentity identity in m_session.IdentityHistory)
+                // {
+                //    if (identity.TokenType == tokenType)
+                //    {
+                //        UserNameCB.Items.Add(identity.DisplayName);
+                //    }
+                //}
             }
             catch (Exception exception)
             {
@@ -156,12 +156,12 @@ namespace Opc.Ua.Sample.Controls
 
                 if ((UserTokenType)UserIdentityTypeCB.SelectedItem == UserTokenType.UserName)
                 {
-                    string username = (string)UserNameCB.SelectedItem;
+                    string username = (string)UserNameTB.Text.Trim();
 
-                    if (String.IsNullOrEmpty(username))
-                    {
-                        username = UserNameCB.PlaceholderText;
-                    }
+                    // if (String.IsNullOrEmpty(username))
+                    //{
+                    //    username = UserNameTB.PlaceholderText;
+                    //}
 
                     if (!String.IsNullOrEmpty(username) || !String.IsNullOrEmpty(PasswordTB.Password))
                     {

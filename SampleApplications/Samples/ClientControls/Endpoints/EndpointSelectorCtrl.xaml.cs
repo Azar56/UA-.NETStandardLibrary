@@ -27,6 +27,7 @@
  * http://opcfoundation.org/License/MIT/1.00/
  * ======================================================================*/
 
+using Opc.Ua.Client.Controls.Endpoints;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -331,6 +332,77 @@ namespace Opc.Ua.Client.Controls
             }
         }
         #endregion
+
+        private async void DiscoverButton_Click(object sender, RoutedEventArgs e)
+        {
+            HostDlg hostDlg = new HostDlg();
+            var hostname = await hostDlg.ShowDialog();
+            try
+            {
+                Uri discovery = null;
+                if (hostname.Contains(":"))
+                {
+                    discovery = new Uri("opc.tcp://" + hostname);
+                }
+                else
+                {
+                    discovery = new Uri("opc.tcp://" + hostname + ":4840");
+                }
+                using (DiscoveryClient client = DiscoveryClient.Create(discovery))
+                {
+                    ApplicationDescriptionCollection servers = client.FindServers(null);
+
+                    ConfiguredEndpoint endpoint = null;
+                    ConfiguredEndpoint selectedEndpoint = null;
+
+                    for (int ii = 0; ii < servers.Count; ii++)
+                    {
+                        if (servers[ii].ApplicationType == ApplicationType.DiscoveryServer)
+                        {
+                            continue;
+                        }
+
+                        for (int jj = 0; jj < servers[ii].DiscoveryUrls.Count; jj++)
+                        {
+                            string discoveryUrl = servers[ii].DiscoveryUrls[jj];
+
+                            // Many servers will use the '/discovery' suffix for the discovery endpoint.
+                            // The URL without this prefix should be the base URL for the server. 
+                            if (discoveryUrl.StartsWith("opc.tcp"))
+                            {
+                                bool found = false;
+                                foreach (var endp in m_endpoints.Endpoints)
+                                {
+                                    if (endp.EndpointUrl.AbsoluteUri == discoveryUrl)
+                                    {
+                                        endpoint = endp;
+                                        found = true;
+                                        break;
+                                    }
+                                }
+                                if (found)
+                                {
+                                    EndpointCB.SelectedItem = endpoint;
+                                }
+                                else
+                                {
+                                    endpoint = m_endpoints.Create(discoveryUrl);
+                                    m_endpoints.Add(endpoint);
+                                    if (selectedEndpoint == null && endpoint.EndpointUrl.Port == 55101) selectedEndpoint = endpoint;
+                                    EndpointCB.Items.Add(endpoint);
+                                }
+                            }
+                        }
+                    }
+                    if (selectedEndpoint != null) EndpointCB.SelectedItem = selectedEndpoint;
+                    else if (endpoint != null) EndpointCB.SelectedItem = endpoint;
+                }
+            }
+            catch (Exception exception)
+            {
+                GuiUtils.HandleException(String.Empty, GuiUtils.CallerName(), exception);
+            }
+        }
     }
 
     #region ConnectEndpointEventArgs Class

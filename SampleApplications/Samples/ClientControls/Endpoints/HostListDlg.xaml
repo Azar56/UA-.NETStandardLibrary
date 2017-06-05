@@ -11,6 +11,5 @@
         <Button x:Name="OkBTN" Content="OK" HorizontalAlignment="Left" Margin="150,356,0,0" VerticalAlignment="Top" Click="OkBTN_Click"/>
         <local:HostListCtrl x:Name="HostsCTRL" HorizontalAlignment="Left" Height="100" Margin="150,153,0,0" VerticalAlignment="Top" Width="100"/>
         <local:SelectHostCtrl x:Name="DomainNameCTRL" HorizontalAlignment="Left" Height="100" Margin="45,157,0,0" VerticalAlignment="Top" Width="100"/>
-        
     </Grid>
 </Page>

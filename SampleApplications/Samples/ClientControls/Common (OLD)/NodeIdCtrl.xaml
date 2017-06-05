@@ -10,6 +10,5 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="BrowseBTN" Content="Button" HorizontalAlignment="Left" Margin="122,220,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="NodeIdTB" HorizontalAlignment="Left" Margin="122,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-
     </Grid>
 </UserControl>

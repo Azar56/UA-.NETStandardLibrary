@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="Opc.Ua.SampleClient.ValueCtrl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Opc.Ua.SampleClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <StackPanel  BorderThickness="1" BorderBrush="Black" Height="25" Margin="1,1,1,1" Orientation="Vertical">
+        <TextBlock Text="{Binding Value, Mode=OneWay}"  Margin="0,3,2,0" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}"  Visibility="{Binding headerVisibility}"/>
+        <ComboBox Margin="0,0,2,0" BorderThickness="0" MaxHeight="23" FontSize="12" SelectedIndex="0" ItemContainerStyle="{StaticResource myItemContainerStyle}" Tag="{Binding ItemModelIndex}" HorizontalAlignment="Stretch" Foreground="{Binding SolidColorBrush, Mode=OneWay}" DropDownOpened="ComboBoxValue_DropDownOpened" DropDownClosed="ComboBoxValue_DropDownClosed" Visibility="{Binding restVisibility}" >
+            <ComboBox.Items>
+                <TextBlock Text="{Binding Value, Mode=OneWay}" FontSize="12" FontWeight="SemiBold"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ListView  ItemsSource="{Binding}" Margin="2,2,0,0" VerticalAlignment="Top" Foreground="White"  ItemContainerStyle="{StaticResource myListViewItemStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" MinWidth="150"/>
+                                    <ColumnDefinition Width="*"  MinWidth="90"/>
+                                    <ColumnDefinition Width="2*" MinWidth="145"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding Value, Mode=OneWay}"  Margin="0,3,2,0" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}" />
+                                </Border>
+                                <Border Grid.Column="1" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding StatusCodeStr, Mode=OneWay}"  Margin="0,1,2,0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}" />
+                                </Border>
+                                <Border Grid.Column="2" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding Timestamp, Mode=OneWay}"  Margin="0,1,2,0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ComboBox.Items>
+        </ComboBox>
+    </StackPanel>
+    <!--<StackPanel Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="1,1,1,1" Height="25" Orientation="Vertical">
+        <TextBlock  Text="{Binding Value, Mode=OneWay}" Margin="0,3,2,0" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}"  Visibility="{Binding headerVisibility}"/>
+        <ComboBox  Margin="0,0,2,0" BorderThickness="0" MaxHeight="23" FontSize="12" ItemContainerStyle="{StaticResource myItemContainerStyle}" DropDownOpened="ComboBoxValueMobile_DropDownOpened" SelectedIndex="0" Tag="{Binding ItemModelIndex}" Foreground="{Binding SolidColorBrush, Mode=OneWay}" HorizontalAlignment="Stretch" Visibility="{Binding restVisibility}" DropDownClosed="ComboBoxValueMobile_DropDownClosed">
+            <ComboBox.Items>
+                <TextBlock Text="{Binding Value, Mode=OneWay}" Margin="0,3,2,0" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ListView  Margin="2,2,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Foreground="White"  ItemContainerStyle="{StaticResource myListViewItemStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" MinWidth="150"/>
+                                    <ColumnDefinition Width="*"  MinWidth="90"/>
+                                    <ColumnDefinition Width="2*" MinWidth="145"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding Value, Mode=OneWay}"  Margin="0,3,2,0" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}" />
+                                </Border>
+                                <Border Grid.Column="1" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding StatusCodeStr, Mode=OneWay}"  Margin="0,1,2,0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}" />
+                                </Border>
+                                <Border Grid.Column="2" BorderThickness="1" Height="25" Margin="1,1,1,1" BorderBrush="Black" >
+                                    <TextBlock Text="{Binding Timestamp, Mode=OneWay}"  Margin="0,1,2,0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{Binding SolidColorBrush, Mode=OneWay}"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ComboBox.Items>
+        </ComboBox>
+    </StackPanel>-->
+
+</UserControl>

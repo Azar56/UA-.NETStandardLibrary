@@ -31,6 +31,38 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
+      </ua:Endpoint>
+      <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
+      <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
+    </ua:ConfiguredEndpoint>
+
+    <!-- 
+      Sample server, opc.tcp endpoint:
+        opc.tcp://localhost:51210/UA/SampleServer // -->
+    <ua:ConfiguredEndpoint>
+      <ua:Endpoint>
+        <EndpointUrl>opc.tcp://Arazar56:51210/UA/SampleServer</EndpointUrl>
+        <SecurityMode>SignAndEncrypt_3</SecurityMode>
+        <SecurityPolicyUri>http://opcfoundation.org/UA/SecurityPolicy#Basic128Rsa15</SecurityPolicyUri>
+        <UserIdentityTokens>
+          <UserTokenPolicy>
+            <TokenType>Anonymous_0</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <TokenType>UserName_1</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <TokenType>Certificate_2</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <PolicyId xsi:nil="true" />
+            <TokenType>IssuedToken_3</TokenType>
+            <IssuedTokenType>urn:oasis:names:tc:SAML:1.0:assertion:Assertion</IssuedTokenType>
+          </UserTokenPolicy>
+        </UserIdentityTokens>
+        <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
@@ -61,12 +93,44 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
     </ua:ConfiguredEndpoint>
 
     <!-- 
+      Sample server, opc.tcp endpoint:
+        opc.tcp://localhost:51210/UA/SampleServer // -->
+    <ua:ConfiguredEndpoint>
+      <ua:Endpoint>
+        <EndpointUrl>opc.tcp://arazar56:51210/UA/SampleServer</EndpointUrl>
+        <SecurityMode>SignAndEncrypt_3</SecurityMode>
+        <SecurityPolicyUri>http://opcfoundation.org/UA/SecurityPolicy#Basic128Rsa15</SecurityPolicyUri>
+        <UserIdentityTokens>
+          <UserTokenPolicy>
+            <TokenType>Anonymous_0</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <TokenType>UserName_1</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <TokenType>Certificate_2</TokenType>
+          </UserTokenPolicy>
+          <UserTokenPolicy>
+            <PolicyId xsi:nil="true" />
+            <TokenType>IssuedToken_3</TokenType>
+            <IssuedTokenType>urn:oasis:names:tc:SAML:1.0:assertion:Assertion</IssuedTokenType>
+          </UserTokenPolicy>
+        </UserIdentityTokens>
+        <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
+      </ua:Endpoint>
+      <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
+      <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
+    </ua:ConfiguredEndpoint>
+
+<!-- 
       Reference server, opc.tcp endpoint:
         opc.tcp://localhost:62541/UA/ReferenceServer // -->
     <ua:ConfiguredEndpoint>
@@ -91,6 +155,7 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
@@ -121,6 +186,7 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
@@ -151,6 +217,7 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
@@ -181,6 +248,7 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>
@@ -211,6 +279,7 @@
           </UserTokenPolicy>
         </UserIdentityTokens>
         <TransportProfileUri>http://opcfoundation.org/UA/profiles/transport/wsxmlorbinary</TransportProfileUri>
+        <SecurityLevel>0</SecurityLevel>
       </ua:Endpoint>
       <ua:UpdateBeforeConnect>true</ua:UpdateBeforeConnect>
       <ua:SelectedUserTokenPolicy>0</ua:SelectedUserTokenPolicy>

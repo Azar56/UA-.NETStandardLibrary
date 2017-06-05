@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Opc.Ua.Client.Controls.Endpoints.HostDlg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Opc.Ua.Client.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,10">
+        <Border BorderBrush="Black" BorderThickness="1" Background="{ThemeResource AppBarBackgroundThemeBrush}" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="350"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,15,0,0" Height="40">
+            <TextBlock  Text="Host name:" Width="100"/>
+            <TextBox x:Name="HostName" Margin="10,-5,0,0" Width="200" />
+        </StackPanel>
+        <Button x:Name="OkBTN" Content="OK" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top"  Width="80" Click="OkBTN_Click"/>
+        <Button x:Name="CancelBTN" Content="Cancel" HorizontalAlignment="Left" Margin="250,70,0,0" VerticalAlignment="Top" Width="80" Click="CancelBTN_Click"/>
+    </Grid>
+</Page>
